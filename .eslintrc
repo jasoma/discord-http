@@ -1,0 +1,102 @@
+{
+	"parser"  : "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "plugins": [
+        "react"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+	"rules": {
+        "camelcase": ["error"],
+        "consistent-this": ["error", "self"],
+		"default-case": 0,
+        "eqeqeq": ["error", "smart"],
+		"global-require": 0, // Used by webpack-isomorphic-tools and React Native
+        "indent": ["warn", 4, {"SwitchCase": 1}],
+		"new-cap": ["error", {
+            "capIsNew": false,
+            "newIsCap": true
+        }], // For Record() etc.
+        "no-console": 0,
+        "no-else-return": ["error"],
+        "no-extend-native": ["error"],
+        "no-lonely-if": ["error"],
+        "no-multi-str": ["error"],
+		"no-nested-ternary": 0, // It's nice for JSX
+		"no-param-reassign": 0,
+        "no-return-assign": ["error"],
+		"no-shadow": 0,
+        "no-unused-vars": ["warn"],
+        "one-var": ["error", {
+            "var": "always", // Exactly one var declaration per function
+            "let": "always", // Exactly one let declaration per block
+            "const": "never" // Exactly one declarator per const declaration per block
+        }],
+
+        /* ES6 */
+        "arrow-body-style": ["error", "as-needed"],
+        "arrow-parens": ["error", "as-needed"],
+        "arrow-spacing": ["error", {
+            "before": true,
+            "after": true
+        }],
+        "generator-star-spacing": ["error", "after"],
+		"no-class-assign": 0, // Class assign is used for higher order components
+        "no-duplicate-imports": "error",
+        "object-shorthand": ["error", "always", {
+            "avoidQuotes": true
+        }],
+        "prefer-arrow-callback": ["error"],
+        "prefer-const": ["error", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+        }],
+        "prefer-rest-params": ["error"],
+        "prefer-template": ["error"],
+        "rest-spread-spacing": ["error", "never"],
+        "sort-imports": ["warn", {
+            "ignoreCase": true
+        }],
+        "template-curly-spacing": ["error", "never"],
+        "yield-star-spacing": ["error", "after"],
+
+        /* React */
+		"react/display-name": 0, // Babel plugin takes care of this for us
+		"react/sort-prop-types": ["warn"],
+        "react/jsx-equals-spacing": ["error"],
+        "react/jsx-filename-extension": ["error"],
+        "react/jsx-key": ["error"]
+	},
+	"globals": {
+        "process": true,
+        "require": false,
+        "console": false,
+        "document": false,
+        "window": false,
+        "localStorage": false,
+        "Promise": true,
+        "Reflect": false,
+        "Symbol": false,
+        "Audio": false,
+        "requestAnimationFrame": false,
+        "setTimeout": false,
+        "clearTimeout": false,
+        "setInterval": false,
+        "clearInterval": false,
+        "FileReader": false
+	},
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "15.3.0"
+        }
+    }
+}

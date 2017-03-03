@@ -1,0 +1,28 @@
+{
+  "name": "discord-http",
+  "version": "1.0.0",
+  "description": "A client for the Discord HTTP API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register test/*-tests.js",
+    "lint": "eslint .",
+    "build": "babel src -d .",
+    "prepubish": "bable src -d ."
+  },
+  "author": "Jason Maher <jason@jasonmaher.me>",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-env": "^1.1.11",
+    "babel-register": "^6.23.0",
+    "chance": "^1.0.6",
+    "eslint": "^3.16.1",
+    "eslint-plugin-react": "^6.10.0",
+    "mocha": "^3.2.0"
+  }
+}
