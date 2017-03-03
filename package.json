@@ -4,7 +4,7 @@
   "description": "A client for the Discord HTTP API",
   "main": "index.js",
   "scripts": {
-    "pretest": "babel src -d lib",
+    "pretest": "babel src -d lib ; babel-node test/setup.js",
     "test": "mocha --compilers js:babel-register test/*-tests.js",
     "lint": "eslint .",
     "build": "babel src -d lib",
@@ -22,6 +22,7 @@
     "babel-preset-env": "^1.1.11",
     "babel-register": "^6.23.0",
     "chance": "^1.0.6",
+    "discord.js": "^11.0.0",
     "eslint": "^3.16.1",
     "eslint-plugin-react": "^6.10.0",
     "mocha": "^3.2.0"

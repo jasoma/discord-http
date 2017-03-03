@@ -58,8 +58,17 @@ function discordApi(auth) {
          */
         post(path, params) {
             return call('POST', path, { body: params });
-        }
+        },
 
+        /**
+         * Executes a DELETE request against a discord endpoint.
+         *
+         * @param {string} path - the path to the endpoint to call.
+         * @returns {Promise} - a promise for the request results.
+         */
+        delete(path) {
+            return call('DELETE', path, {})
+        }
     }
 }
 
@@ -74,6 +83,11 @@ function client(token) {
     const api = discordApi(`Bot ${token}`);
 
     return {
+
+        /**
+         * Basic http client for making requests against the discord api as your bot.
+         */
+        http: api,
 
         /**
          * Creates a new channel in a guild.
