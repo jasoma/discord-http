@@ -61,6 +61,28 @@ function discordApi(auth) {
         },
 
         /**
+         * Executes a PUT request against a discord endpoint.
+         *
+         * @param {string} path - the path to the endpoint to call.
+         * @param {object} params - parameters for the request, will be placed in the request body.
+         * @returns {Promise} - a promise for the request results.
+         */
+        put(path, params) {
+            return call('PUT', path, { body: params });
+        },
+
+        /**
+         * Executes a PATCH request against a discord endpoint.
+         *
+         * @param {string} path - the path to the endpoint to call.
+         * @param {object} params - parameters for the request, will be placed in the request body.
+         * @returns {Promise} - a promise for the request results.
+         */
+        patch(path, params) {
+            return call('PATCH', path, { body: params });
+        },
+
+        /**
          * Executes a DELETE request against a discord endpoint.
          *
          * @param {string} path - the path to the endpoint to call.
