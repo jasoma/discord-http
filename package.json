@@ -4,10 +4,11 @@
   "description": "A client for the Discord HTTP API",
   "main": "index.js",
   "scripts": {
+    "pretest": "babel src -d lib",
     "test": "mocha --compilers js:babel-register test/*-tests.js",
     "lint": "eslint .",
-    "build": "babel src -d .",
-    "prepubish": "bable src -d ."
+    "build": "babel src -d lib",
+    "prepubish": "babel src -d lib"
   },
   "author": "Jason Maher <jason@jasonmaher.me>",
   "license": "MIT",
