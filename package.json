@@ -2,7 +2,7 @@
   "name": "discord-http",
   "version": "1.0.0",
   "description": "A client for the Discord HTTP API",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "pretest": "babel src -d lib ; babel-node test/setup.js",
     "test": "mocha --compilers js:babel-register test/*-tests.js",
