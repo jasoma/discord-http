@@ -10,11 +10,14 @@ import discord from 'discord-http';
 const botToken = 'YourApplicationsBotToken';
 const guildId = 'AGuildYourBotHasAccessTo';
 
+// create the client
 const client = discord('YouBotToken');
 
-client.createChannel(guildId, 'Match-31')
-  .then(channelId => client.postMessage(channelId, 'Waiting for player check in'))
-  .then(message => console.log(`Match-31 channel initialized`));
+// make a channel
+const channelId = await client.createChannel(guildId, 'Match-31');
+
+// post a message
+const message = await client.postMessage(channelId, `Match-31 channel initialized`);
 ```
 
 Methods:
