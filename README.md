@@ -17,6 +17,11 @@ client.createChannel(guildId, 'Match-31')
   .then(message => console.log(`Match-31 channel initialized`));
 ```
 
+Methods:
+
+- [createChannel](https://jasoma.github.io/discord-http/global.html#createChannel)
+- [postMessage](https://jasoma.github.io/discord-http/global.html#postMessage)
+
 ## Why not an existing library?
 
 Full featured discord libraries already exist for node:
