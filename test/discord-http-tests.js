@@ -1,6 +1,6 @@
 import assert from 'assert';
 import Chance from 'chance';
-import discord from '../lib/discord-http';
+import discord from '../lib';
 
 const { DISCORD_TEST_TOKEN: token, DISCORD_TEST_GUILD: guildId } = process.env;
 
@@ -27,5 +27,7 @@ describe('discord-http', () => {
                 assert.equal(content, message.content)
             });
     });
+
+    after(() => client.http.delete(`/channels/${channelId}`));
 
 });
