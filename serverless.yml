@@ -1,0 +1,29 @@
+service: discord-http
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+package:
+  exclude:
+    - src/**
+
+functions:
+
+  createChannel:
+    handler: lib/lambda.createChannel
+    environment:
+      DISCORD_TOKEN: ${env:DISCORD_TOKEN}
+    events:
+      - http:
+          path: discord/createChannel
+          method: post
+
+  postMessage:
+    handler: lib/lambda.postMessage
+    environment:
+      DISCORD_TOKEN: ${env:DISCORD_TOKEN}
+    events:
+      - http:
+          path: discord/postMessage
+          method: post

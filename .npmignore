@@ -1,4 +1,17 @@
+docs
 src
 test
+.babelrc
 .editorconfig
+.envrc
+.eslintignore
 .eslintrc
+.gitignore
+jsdoc.json
+
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless

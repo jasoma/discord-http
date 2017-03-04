@@ -9,13 +9,17 @@
     "lint": "eslint .",
     "build": "babel src -d lib",
     "prepubish": "babel src -d lib",
-    "docs": "jsdoc -c jsdoc.json"
+    "docs": "jsdoc -c jsdoc.json",
+    "predeploy": "babel src -d lib",
+    "deploy": "serverless deploy"
   },
   "author": "Jason Maher <jason@jasonmaher.me>",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.4",
     "request": "^2.79.0",
-    "request-promise": "^4.1.1"
+    "request-promise": "^4.1.1",
+    "serverless": "^1.8.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
