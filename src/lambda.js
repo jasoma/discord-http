@@ -56,7 +56,7 @@ function validate(input, callback) {
 export function createChannel(event, context, callback) {
     const { guildId, name } = event;
 
-    if (!validate({ guildId, name })) {
+    if (!validate({ guildId, name }, callback)) {
         return;
     }
 
@@ -84,7 +84,7 @@ export function createChannel(event, context, callback) {
 export function postMessage(event, context, callback) {
     const { channelId, message } = event;
 
-    if (!validate({ channelId, message })) {
+    if (!validate({ channelId, message }, callback)) {
         return;
     }
 

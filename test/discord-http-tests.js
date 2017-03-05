@@ -28,6 +28,19 @@ describe('discord-http', () => {
             });
     });
 
+    it('should propagate api errors', done => {
+        client.createChannel('NotAGuildId', 'test')
+            .then(() => done(new Error('create channel succeeded for a bad guild id')))
+            .catch(err => {
+                /* eslint-disable camelcase */
+                const { statusCode, error: { guild_id } } = err;
+                /* eslint-enable camelcase */
+                assert.equal(400, statusCode);
+                assert.ok(guild_id, 'api error data was not available');
+                done();
+            });
+    });
+
     after(() => client.http.delete(`/channels/${channelId}`));
 
 });
