@@ -3,7 +3,6 @@ import Chance from 'chance';
 import discord from '../lib';
 
 const { DISCORD_TEST_TOKEN: token, DISCORD_TEST_GUILD: guildId } = process.env;
-
 const chance = new Chance();
 const client = discord(token);
 
